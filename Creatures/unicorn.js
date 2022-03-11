@@ -10,9 +10,9 @@ class unicorn extends Creature {
   async play() {
     const { play } = await inquirer.prompt(questions.unicornPlay);
 
-    if (play === 'sprinkle') this.boredom(-2);
-    if (play === 'clouds') this.boredom(-3);
-    if (play === 'hideandseek') this.boredom(-5);
+    if (play === 'sprinkle') this.boredom(+2);
+    if (play === 'clouds') this.boredom(+3);
+    if (play === 'hideandseek') this.boredom(+5);
   }
 }
 

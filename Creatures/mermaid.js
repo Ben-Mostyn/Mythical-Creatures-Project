@@ -10,9 +10,9 @@ class mermaid extends Creature {
   async play() {
     const { play } = await inquirer.prompt(questions.mermaidPlay);
 
-    if (play === 'water') this.boredom(-2);
-    if (play === 'shells') this.boredom(-5);
-    if (play === 'necklace') this.boredom(-5);
+    if (play === 'water') this.boredom(+2);
+    if (play === 'shells') this.boredom(+5);
+    if (play === 'necklace') this.boredom(+5);
   }
 }
 

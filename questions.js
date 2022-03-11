@@ -6,17 +6,17 @@ const questions = {
     choices: [
       {
         key: 'a',
-        name: 'meat: hunger -2',
+        name: 'meat',
         value: 'meat',
       },
       {
         key: 'b',
-        name: 'berries: hunger -5',
+        name: 'berries',
         value: 'berries',
       },
       {
         key: 'c',
-        name: 'wild boar: hunger -10',
+        name: 'wild boar',
         value: 'wild boar',
       },
     ],

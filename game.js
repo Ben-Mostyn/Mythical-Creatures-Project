@@ -27,9 +27,9 @@ async function start() {
 }
 
 async function userChoice() {
-  myCreature.boredom(20);
-  myCreature.hunger(20);
-  myCreature.thirst(20);
+  myCreature.boredom(10);
+  myCreature.hunger(10);
+  myCreature.thirst(10);
   myCreature.stats;
 
   if (!myCreature._isAlive) {

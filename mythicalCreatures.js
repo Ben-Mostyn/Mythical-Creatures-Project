@@ -50,18 +50,35 @@ class Creature {
       this._isAlive = false;
       this.status = `${this.name} has died. Please, look after your pet.`;
     }
+    if (this._hunger > 50) {
+      this._isAlive = false;
+      this.status = `${this.name} got too fat.`;
+    }
+
+
     if (this._boredom <= 0) {
       this._isAlive = false;
       this.status = `${this.name} has run away to join the circus because they were bored, please play with your pet more next time...`;
     }
+    if (this._boredom > 50) {
+      this._isAlive = false;
+      this.status = `${this.name} got too excited, be careful next time`;
+    }
+
+
     if (this._thirst <= 0) {
       this._isAlive = false;
       this.status = `${this.name} has died of thirst`;
     }
+
+    if (this._thirst > 50) {
+      this._isAlive = false;
+      this.status = `${this.name} drank too much and got sick`;
+    }
   }
 
   drinks() {
-    this.thirst(-5);
+    this.thirst(5);
     if (this.thirst < 0) this._thirst = 0;
     console.log(`Aaaaah, ${this.name} is feeling refreshed.`);
     return this.thirst;
@@ -80,12 +97,13 @@ class Creature {
   hunger(num) {
     this._hunger += num;
 
-    if (this._hunger < 0) this._hunger = 0;
-    if (this._hunger > 10) this.boredom(-2);
+    if (this._hunger < 0){ this._hunger = 0};
+  if (this._hunger < 10){this.boredom(-1) };
     if (this._hunger > 20) {
+      
       this.boredom(-2);
-    
     }
+    
     return this.checkStats();
   }
 
@@ -93,10 +111,12 @@ class Creature {
     this._thirst += num;
 
     if (this._thirst < 0) this._thirst = 0;
-    if (this._thirst > 10);
+    if (this._thirst < 10){this.hunger(-1)};
     if (this._thirst > 20) {
       this.hunger(-2);
     }
+    
+    
     return this.checkStats();
   }
 
@@ -104,10 +124,11 @@ class Creature {
   boredom(num) {
     this._boredom += num;
     if (this._boredom < 0) this._boredom = 0;
-    if (this._boredom > 10);
+    if (this._boredom < 10) {this.thirst(-1)};
     if (this._boredom > 20) {
       this.thirst(-2);
     }
+    
 
     return this.checkStats();
   }

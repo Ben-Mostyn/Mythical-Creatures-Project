@@ -11,9 +11,9 @@ class griffin extends Creature {
   async play() {
     const { play } = await inquirer.prompt(questions.griffinPlay);
 
-    if (play === 'fetch') this.boredom(-3);
-    if (play === 'neighbourhood') this.boredom(-3);
-    if (play === 'zoom') this.boredom(-5);
+    if (play === 'fetch') this.boredom(+3);
+    if (play === 'neighbourhood') this.boredom(+3);
+    if (play === 'zoom') this.boredom(+5);
   }
 }
 
